@@ -12,8 +12,6 @@
 
 #include "ft_printf.h"
 
-#include "ft_printf.h"
-
 int	main(void)
 {
 	char	*str = "c -> %c\ns -> %s\np -> %p\nd -> %d\ni -> %i\nu -> %u\nx -> %x\nX -> %X\n% -> %%\n";
