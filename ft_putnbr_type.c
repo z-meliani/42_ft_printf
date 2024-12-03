@@ -6,7 +6,7 @@
 /*   By: zmeliani <zmeliani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:43:06 by zmeliani          #+#    #+#             */
-/*   Updated: 2024/11/25 12:43:01 by zmeliani         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:33:47 by zmeliani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_putnbr_pointer(size_t nbr, int *size)
 	write(1, &digit, 1);
 }
 
-void	ft_putnbr_unsigned(unsigned int nbr, char type, int *size)
+void	ft_putnbr_unint(unsigned int nbr, char type, int *size)
 {
 	unsigned int	digit;
 	char			*base;
@@ -82,7 +82,7 @@ void	ft_putnbr_unsigned(unsigned int nbr, char type, int *size)
 	if (nbr / len_base == 0 && nbr % len_base < 0)
 		write(1, "-", 1);
 	if (nbr / len_base != 0)
-		ft_putnbr_unsigned(nbr / len_base, type, size);
+		ft_putnbr_unint(nbr / len_base, type, size);
 	digit = base[(nbr % len_base)];
 	write(1, &digit, 1);
 }

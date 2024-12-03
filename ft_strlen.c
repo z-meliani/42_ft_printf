@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_len.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmeliani <zmeliani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:13:23 by zmeliani          #+#    #+#             */
-/*   Updated: 2024/11/26 12:42:22 by zmeliani         ###   ########.fr       */
+/*   Created: 2024/11/21 12:05:28 by zmeliani          #+#    #+#             */
+/*   Updated: 2024/11/27 11:36:49 by zmeliani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *size)
+size_t	ft_strlen(const char *s)
 {
-	int	len_s;
+	size_t	i;
 
 	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
 	{
-		write(1, "(null)", 6);
-		*size += 6;
-		return ;
+		i++;
 	}
-	len_s = ft_strlen(s);
-	*size += len_s;
-	write(1, s, len_s);
+	return (i);
 }

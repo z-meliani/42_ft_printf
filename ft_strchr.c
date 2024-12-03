@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmeliani <zmeliani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:13:23 by zmeliani          #+#    #+#             */
-/*   Updated: 2024/11/26 12:42:22 by zmeliani         ###   ########.fr       */
+/*   Created: 2024/11/07 14:11:19 by zmeliani          #+#    #+#             */
+/*   Updated: 2024/11/26 13:00:51 by zmeliani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *size)
+char	*ft_strchr(const char *s, int c)
 {
-	int	len_s;
+	int	i;
 
-	if (!s)
+	i = -1;
+	while (s[++i])
 	{
-		write(1, "(null)", 6);
-		*size += 6;
-		return ;
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 	}
-	len_s = ft_strlen(s);
-	*size += len_s;
-	write(1, s, len_s);
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (0);
 }

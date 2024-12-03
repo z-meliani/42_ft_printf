@@ -6,7 +6,7 @@
 /*   By: zmeliani <zmeliani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:37:53 by zmeliani          #+#    #+#             */
-/*   Updated: 2024/11/25 19:35:33 by zmeliani         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:40:26 by zmeliani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(void)
 	char	*str = "c -> %c\ns -> %s\np -> %p\nd -> %d\ni -> %i\nu -> %u\nx -> %x\nX -> %X\n% -> %%\n";
 	char	*sent = "Python !!!";
 	char	c = 'W';
-	long	pt = 9876543210;
+	long	pt = -42;
 	void	*pt0 = &pt;
-	int	len;
+	int		len;
 
 	printf("-------- printf / ft_printf--------\n");
 	len = printf(str, c, sent, pt, pt, pt, pt, pt, pt);
@@ -33,7 +33,7 @@ int	main(void)
 	ft_printf("len --> %d\n\n", len);
 	printf("-------- printf / ft_printf (EMPTY) --------\n");
 	len = printf(0);
-	printf("len --> %d\n\n", len);
+	printf("len --> %d\n", len);
 	len = ft_printf(0);
 	ft_printf("len --> %d\n\n", len);
 	ft_printf("------- mix test -------\n");
